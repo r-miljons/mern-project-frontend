@@ -1,13 +1,284 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* layout */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins";
+  min-height: 100vh;
+  position: relative;
+}
+header {
+  background: #fff;
+}
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #333;
+  text-decoration: none;
+}
+.pages{
+  max-width: 1400px;
+  padding: 20px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+}
+
+.meals {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 20px;
+}
+
+/* dashboard */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 50px;
+}
+
+@media (max-width: 1000px) {
+  .dashboard {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.meal-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px 0;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.meal-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+.meal-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+.actions {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.actions span {
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 10px;
+  color: rgb(69, 69, 69);
+  margin-left: 0.5rem;
+}
+
+.meal-details .img-wrapper {
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.meal-details img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* new workout form */
+label, input {
+  display: block;
+}
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+div.success {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+nav a {
+  margin-left: 10px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  .nav-actions {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  .nav-actions .username {
+    margin-top: 0.5rem;
+  }
+}
+
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+/* auth forms */
+form.signup, form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+/* footer */ 
+
+footer {
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* pagination */
+
+.pagination {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+}
+
+.pagination button {
+  border: none;
+  color: rgb(65, 65, 65);
+  border-radius: 2px;
+  width: 40px;
+  font-size: larger;
+  height: 40px;
+  background-color: white;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.pagination button:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.pagination .active {
+  background-color: lightgray;
+}
+
+/* edit form */
+
+.dark-overlay {
+  position: fixed;
+  background-color: rgba(85, 85, 85, 0.319);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+form.edit-meal {
+  background-color: rgb(239, 239, 239);
+  padding: 20px;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 20px;
+}
+
+form.edit-meal .button-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+form.edit-meal button.cancel {
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
 }
