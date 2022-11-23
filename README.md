@@ -1,4 +1,4 @@
-## This was my very first full-stack project.
+## This was my very first full-stack project. 🎉
 
 ### On [this](https://meal-hub-social.netlify.app/) website you can:
 * Login/Signup
